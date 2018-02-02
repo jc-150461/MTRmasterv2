@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:MuscleTrainingRecords00;assembly=MuscleTrainingRecords00"
              x:Class="MuscleTrainingRecords00.RecordListPage"
+             xmlns:toolkit="clr-namespace:MuscleTrainingRecords00;assembly=MuscleTrainingRecords00"
              Title="記録" >
     
      <ContentPage.BindingContext>
