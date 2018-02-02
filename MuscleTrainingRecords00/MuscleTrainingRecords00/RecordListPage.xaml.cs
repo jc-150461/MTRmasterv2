@@ -55,17 +55,26 @@ namespace MuscleTrainingRecords00
 
         }
 
-        private void btnTest_Clicked(object sender, EventArgs e)
+        /*private void btnTest_Clicked(object sender, EventArgs e)
         {
-           /* Record n = (Record)(list.SelectedItem);
+            Record n = (Record)(list.SelectedItem);
             int m = n.M_no;
-            RecordsModel.DeleteRecords(m);*/
-        }
-
-        /*private async void button_Clicked(object sender, EventArgs e)
-        {
-            RecordsModel.DeleteRecords();
+            RecordsModel.DeleteRecords(m);
         }*/
 
+        async void OnDelete_Clicked(object sender, EventArgs args)
+        {
+            string no = ((DeleteButton)sender).NoText;
+            string name = ((DeleteButton)sender).NameText;
+
+            var result = await DisplayAlert("削除", "このメニューを削除しますか", "OK", "キャンセル");
+            if (result == true)
+            {
+                int m_no = int.Parse(no);
+                RecordsModel.DeleteRecords(m_no);
+
+                InitializeComponent();
+            }
+        }
     }
 }
