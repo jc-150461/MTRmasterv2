@@ -62,7 +62,7 @@ namespace MuscleTrainingRecords00
             RecordsModel.DeleteRecords(m);
         }*/
 
-        async void OnDelete_Clicked(object sender, EventArgs args)
+        /*async void OnDelete_Clicked(object sender, EventArgs args)
         {
             string no = ((DeleteButton)sender).NoText;
             string name = ((DeleteButton)sender).NameText;
@@ -75,6 +75,6 @@ namespace MuscleTrainingRecords00
 
                 InitializeComponent();
             }
-        }
+        }*/
     }
 }
