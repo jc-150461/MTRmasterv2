@@ -23,8 +23,13 @@ namespace MuscleTrainingRecords00
             x = l;
             t = m;
 
-            DisplayAlert("id", "" + ReModelv2.key,"OK");
             
+        }
+        
+        protected override void OnAppearing()
+        {
+            DisplayAlert("id", "" + ReModelv2.key, "OK");
+
         }
 
 
