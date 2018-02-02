@@ -22,6 +22,8 @@ namespace MuscleTrainingRecords00
 
             x = l;
             t = m;
+
+            DisplayAlert("id", "" + ReModelv2.key,"OK");
             
         }
 

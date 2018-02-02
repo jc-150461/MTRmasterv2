@@ -15,7 +15,7 @@ namespace MuscleTrainingRecords00
 
         public ReModelv2()
         {
-
+           
             if (RecordModelv2.SelectRe(key) != null)
             //if(RecordModelv2.SelectRecord()!= null)
             {
@@ -62,6 +62,8 @@ namespace MuscleTrainingRecords00
             }
         }
     }
+
+    
     public class Recordv2
     {
         public int M_no { get; set; } //筋トレNo 主キー
