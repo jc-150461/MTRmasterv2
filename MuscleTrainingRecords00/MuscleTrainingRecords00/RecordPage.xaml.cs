@@ -28,7 +28,7 @@ namespace MuscleTrainingRecords00
         
         protected override void OnAppearing()
         {
-            DisplayAlert("id", "" + ReModelv2.key, "OK");
+            DisplayAlert("id", "" + ReModelv2.name, "OK");
 
         }
 
