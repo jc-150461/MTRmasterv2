@@ -19,7 +19,7 @@ namespace MuscleTrainingRecords00
 
         public int M_set { get; set; } //セット数
 
-        public DateTime M_date { get; set; } //日付
+        public string M_date { get; set; } //日付
 
     }
 }

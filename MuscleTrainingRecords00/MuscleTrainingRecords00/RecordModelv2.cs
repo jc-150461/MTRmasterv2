@@ -25,14 +25,14 @@ namespace MuscleTrainingRecords00
 
         public int M_set { get; set; } //セット数
 
-        public DateTime M_date { get; set; } //日付
+        public string M_date { get; set; } //日付
 
 
 
 
 
         /********************インサートメソッド RecordPage　追加**********************/
-        public static void InsertRe(int m_no, string m_name, int m_weight, int m_leg, int m_set, DateTime m_date)
+        public static void InsertRe(int m_no, string m_name, int m_weight, int m_leg, int m_set, string m_date)
         {
             //データベースに接続する
             using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
@@ -55,14 +55,14 @@ namespace MuscleTrainingRecords00
 
 
         /*******************セレクトメソッド RecordPage　 追加*************************************/
-        public static List<RecordModelv2> SelectRe(string m_name, DateTime m_date) //前回　int m_no
+        public static List<RecordModelv2> SelectRe(string m_name) //前回　int m_no 前々回  DateTime m_date
         {
 
             using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
             {
                 //前回　int no = m_no;
                 string name = m_name;
-                DateTime date = m_date;
+                //DateTime date = m_date;
 
                 try
                 {
@@ -150,7 +150,7 @@ namespace MuscleTrainingRecords00
         }
 
         /********************アップデートメソッド RecordPage**************************************/
-        public static void UpdateRecord(int m_no, int m_weight, int m_leg, int m_set, DateTime m_date)
+        public static void UpdateRecord(int m_no, int m_weight, int m_leg, int m_set, string m_date)
         {
             using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
             {

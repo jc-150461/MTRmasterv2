@@ -14,7 +14,8 @@ namespace MuscleTrainingRecords00
         string t;
 
         //今日の日付
-        DateTime now = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+        static  DateTime now = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+        string date = now.ToString("yyyy/mm/dd");
         public MenudetaliPage(string m, string d, string i)//String m
         {
             InitializeComponent();
@@ -33,7 +34,7 @@ namespace MuscleTrainingRecords00
         private void addItemButton_Clicked(object sender, EventArgs e)
         {
 
-            RecordsModel.InsertRe(1,t,0,0,0,now);
+            RecordsModel.InsertRe(1,t,0,0,0,date);
 
             Navigation.PushAsync(new RecordListPage());
 

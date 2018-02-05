@@ -26,11 +26,11 @@ namespace MuscleTrainingRecords00
             
         }
         
-        protected override void OnAppearing()
+       /* protected override void OnAppearing()
         {
             DisplayAlert("id", ReModelv2.key+" " + ReModelv2.name +" "+ReModelv2.date, "OK");
 
-        }
+        }*/
 
 
         //引っ張ったとき（更新）
@@ -62,8 +62,9 @@ namespace MuscleTrainingRecords00
 
 
             DateTime now = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+            string date = now.ToString("yyyy/mm/dd");
 
-            RecordModelv2.InsertRe(t,x,WeightText,RepsText,SetText,now);
+            RecordModelv2.InsertRe(t,x,WeightText,RepsText,SetText,date);
             //RecordModelv2.InsertRe(0, "データ", 0, 0, 0, now);
         }
     }
