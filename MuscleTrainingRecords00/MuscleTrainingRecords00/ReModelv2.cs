@@ -6,8 +6,9 @@ namespace MuscleTrainingRecords00
 {
     class ReModelv2
     {
-        //前回 public static int key;
+        public static int key;
         public static string name;
+        public static DateTime date;
         public ObservableCollection<Recordv2> Recordsv2
         {
             get;
@@ -17,7 +18,7 @@ namespace MuscleTrainingRecords00
         public ReModelv2()
         {
             //var query = RecordModelv2.SelectRe(key);
-            var query = RecordModelv2.SelectRe(name);
+            var query = RecordModelv2.SelectRe(name ,date);
             if (query != null)
             //if (RecordModelv2.SelectRe(key) != null)
             //if(RecordModelv2.SelectRecord()!= null)

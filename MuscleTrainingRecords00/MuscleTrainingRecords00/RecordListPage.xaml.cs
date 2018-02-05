@@ -47,23 +47,15 @@ namespace MuscleTrainingRecords00
             Record r = (Record)(list.SelectedItem);
             string l = r.M_name;
 
-            /* 前回　Record n =(Record)(list.SelectedItem);
-              m = n.M_no;
+             Record n =(Record)(list.SelectedItem);
+             int m = n.M_no;
 
-             ReModelv2.key = m;*/
+             ReModelv2.key = m;
 
             ReModelv2.name = l;
             Navigation.PushAsync(new RecordPage(l,m));
 
         }
-
-        /*private void btnTest_Clicked(object sender, EventArgs e)
-        {
-            Record n = (Record)(list.SelectedItem);
-            int m = n.M_no;
-            RecordsModel.DeleteRecords(m);
-        }*/
-
         /*async void OnDelete_Clicked(object sender, EventArgs args)
         {
             string no = ((DeleteButton)sender).NoText;
