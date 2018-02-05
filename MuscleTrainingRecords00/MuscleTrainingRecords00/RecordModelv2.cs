@@ -13,7 +13,8 @@ namespace MuscleTrainingRecords00
     [Table("Re")]//テーブル名を指定
     class RecordModelv2
     {
-        [PrimaryKey, AutoIncrement, Column("_id")]
+        //[PrimaryKey, AutoIncrement, Column("_id")]
+        [PrimaryKey, AutoIncrement]
         public int M_no { get; set; } //筋トレNo 主キー
 
         public string M_name { get; set; } //筋トレ名前

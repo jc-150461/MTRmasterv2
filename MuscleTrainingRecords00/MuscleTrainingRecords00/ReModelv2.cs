@@ -15,11 +15,12 @@ namespace MuscleTrainingRecords00
 
         public ReModelv2()
         {
-           
-            if (RecordModelv2.SelectRe(key) != null)
+            var query = RecordModelv2.SelectRe(key);
+            if (query != null)
+            //if (RecordModelv2.SelectRe(key) != null)
             //if(RecordModelv2.SelectRecord()!= null)
             {
-                var query = RecordModelv2.SelectRe(key);
+               // var query = RecordModelv2.SelectRe(key);
                 //var query = RecordModelv2.SelectRecord();
                 Recordsv2 = new ObservableCollection<Recordv2>();
 
