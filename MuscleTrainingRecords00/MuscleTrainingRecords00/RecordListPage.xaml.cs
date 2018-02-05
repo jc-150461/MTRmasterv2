@@ -50,9 +50,12 @@ namespace MuscleTrainingRecords00
              Record n =(Record)(list.SelectedItem);
              int m = n.M_no;
 
-             ReModelv2.key = m;
+            DateTime now = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
 
+            ReModelv2.date = now;
+            ReModelv2.key = m;  
             ReModelv2.name = l;
+
             Navigation.PushAsync(new RecordPage(l,m));
 
         }

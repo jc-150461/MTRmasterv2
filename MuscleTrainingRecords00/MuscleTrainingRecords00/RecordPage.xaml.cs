@@ -44,6 +44,8 @@ namespace MuscleTrainingRecords00
 
             InitializeComponent();
 
+            m_name.Text = x;
+
         }
 
         private void addItemButton_Clicked(object sender, EventArgs e)
