@@ -12,12 +12,9 @@ namespace MuscleTrainingRecords00
 {
     public partial class RecordListPage : ContentPage
     {
-        int m;
         public RecordListPage()
         {
             InitializeComponent();
-
-           
         }
 
 
@@ -59,7 +56,8 @@ namespace MuscleTrainingRecords00
             Navigation.PushAsync(new RecordPage(l,m));
 
         }
-        /*async void OnDelete_Clicked(object sender, EventArgs args)
+
+        async void OnDelete_Clicked(object sender, EventArgs args)
         {
             string no = ((DeleteButton)sender).NoText;
             string name = ((DeleteButton)sender).NameText;
@@ -72,6 +70,6 @@ namespace MuscleTrainingRecords00
 
                 InitializeComponent();
             }
-        }*/
+        }
     }
 }

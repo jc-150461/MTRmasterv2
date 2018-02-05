@@ -35,7 +35,7 @@ namespace MuscleTrainingRecords00
                    ((DeleteButton)bindable).textNameLabel.Text = (string)newValue;
                });
 
-        /*public static readonly BindableProperty IsCheckedProperty =
+        public static readonly BindableProperty IsCheckedProperty =
           BindableProperty.Create(
               "IsChecked",
               typeof(bool),
@@ -51,7 +51,7 @@ namespace MuscleTrainingRecords00
                   {
                       eventHandler(button, (bool)newValue);
                   }
-              });*/
+              });
 
         public event EventHandler<bool> CheckedChanged;
 
@@ -73,7 +73,7 @@ namespace MuscleTrainingRecords00
         }
 
         //TapGestureRecognizerハンドラー
-       /* void OnButtonTapped(object sender, EventArgs args)
+        /*void OnButtonTapped(object sender, EventArgs args)
         {
             IsChecked = !IsChecked;
         }*/
