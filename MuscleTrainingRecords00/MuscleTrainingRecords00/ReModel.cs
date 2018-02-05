@@ -52,7 +52,7 @@ namespace MuscleTrainingRecords00
                    M_weight=0,
                    M_leg=0,
                    M_set=0,
-                   M_date= new DateTime(DateTime.Now.Year,DateTime.Now.Month,DateTime.Now.Day),
+                   M_date= new DateTime(DateTime.Now.Year,DateTime.Now.Month,DateTime.Now.Day).ToString("yyyy/mm/dd");,
                }
            };
             }
