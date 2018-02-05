@@ -13,8 +13,8 @@ namespace MuscleTrainingRecords00
     [Table("Re")]//テーブル名を指定
     class RecordModelv2
     {
-        [PrimaryKey, AutoIncrement, Column("_id")]
-        //[PrimaryKey, AutoIncrement]
+        //[PrimaryKey, AutoIncrement, Column("_id")]
+        [PrimaryKey, AutoIncrement]
         public int M_no { get; set; } //筋トレNo 主キー
 
         public string M_name { get; set; } //筋トレ名前
@@ -68,7 +68,7 @@ namespace MuscleTrainingRecords00
 
                     //データベースに指定したSQLを発行
                     // 前回　return db.Query<RecordModelv2>("SELECT * FROM [Re] WHERE [M_no] =" + no);
-                    return db.Query<RecordModelv2>("SELECT * FROM [Re] WHERE [M_no] =" + name);
+                    return db.Query<RecordModelv2>("SELECT * FROM [Re] WHERE [M_name] =" + name);
                     // ORDER BY[M_date]
                 }
                 catch (Exception e)
