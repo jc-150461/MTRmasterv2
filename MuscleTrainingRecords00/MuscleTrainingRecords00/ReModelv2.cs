@@ -13,6 +13,7 @@ namespace MuscleTrainingRecords00
         {
             get;
             private set;
+
         }
 
         public ReModelv2()
