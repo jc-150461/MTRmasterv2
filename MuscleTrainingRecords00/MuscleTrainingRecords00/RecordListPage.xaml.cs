@@ -47,10 +47,12 @@ namespace MuscleTrainingRecords00
             Record r = (Record)(list.SelectedItem);
             string l = r.M_name;
 
-            Record n =(Record)(list.SelectedItem);
-             m = n.M_no;
+            /* 前回　Record n =(Record)(list.SelectedItem);
+              m = n.M_no;
 
-            ReModelv2.key = m;
+             ReModelv2.key = m;*/
+
+            ReModelv2.name = l;
             Navigation.PushAsync(new RecordPage(l,m));
 
         }

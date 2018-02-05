@@ -55,18 +55,20 @@ namespace MuscleTrainingRecords00
 
 
         /*******************セレクトメソッド RecordPage　 追加*************************************/
-        public static List<RecordModelv2> SelectRe(int m_no)
+        public static List<RecordModelv2> SelectRe(string m_name) //前回　int m_no
         {
 
             using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
             {
-                int no = m_no;
+                //前回　int no = m_no;
+                string name = m_name;
 
                 try
                 {
-                   
+
                     //データベースに指定したSQLを発行
-                    return db.Query<RecordModelv2>("SELECT * FROM [Re] WHERE [M_no] =" + no);
+                    // 前回　return db.Query<RecordModelv2>("SELECT * FROM [Re] WHERE [M_no] =" + no);
+                    return db.Query<RecordModelv2>("SELECT * FROM [Re] WHERE [M_no] =" + name);
                     // ORDER BY[M_date]
                 }
                 catch (Exception e)
