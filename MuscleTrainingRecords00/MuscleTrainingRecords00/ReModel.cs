@@ -20,7 +20,7 @@ namespace MuscleTrainingRecords00
         {
             if(RecordsModel.SelectRe().Equals(name))
             {
-                RecordsModel.UpdateRe(date);
+                //RecordsModel.UpdateRe(date);
             }
 
             if (RecordsModel.SelectRecords() != null)
