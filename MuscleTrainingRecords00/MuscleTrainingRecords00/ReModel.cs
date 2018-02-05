@@ -5,15 +5,23 @@ namespace MuscleTrainingRecords00
 {
     class ReModel
     {
+        public static string name;
+        static DateTime now = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+        string date = now.ToString("yyyy/MM/dd");
+
+
         public ObservableCollection<Record> Records
         {
             get;
             private set;
         }
-
+        
         public ReModel()
         {
-
+            if(RecordsModel.SelectRe().Equals(name))
+            {
+                RecordsModel.UpdateRe(date);
+            }
 
             if (RecordsModel.SelectRecords() != null)
             {
@@ -52,7 +60,7 @@ namespace MuscleTrainingRecords00
                    M_weight=0,
                    M_leg=0,
                    M_set=0,
-                   M_date= new DateTime(DateTime.Now.Year,DateTime.Now.Month,DateTime.Now.Day).ToString("yyyy/mm/dd"),
+                   M_date= new DateTime(DateTime.Now.Year,DateTime.Now.Month,DateTime.Now.Day).ToString("yyyy/MM/dd"),
                }
            };
             }

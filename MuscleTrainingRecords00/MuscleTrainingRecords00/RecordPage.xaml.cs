@@ -62,7 +62,7 @@ namespace MuscleTrainingRecords00
 
 
             DateTime now = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
-            string date = now.ToString("yyyy/mm/dd");
+            string date = now.ToString("yyyy/MM/dd");
 
             RecordModelv2.InsertRe(t,x,WeightText,RepsText,SetText,date);
             //RecordModelv2.InsertRe(0, "データ", 0, 0, 0, now);
