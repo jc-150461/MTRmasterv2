@@ -99,5 +99,28 @@ namespace MuscleTrainingRecords00
             RecordModelv2.InsertRe(t, x, WeightText, RepsText, SetText, date);
             //RecordModelv2.InsertRe(0, "データ", 0, 0, 0, now);
         }
+
+        private async Task list_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            Recordv2 n = (Recordv2)(list.SelectedItem);
+            int m = n.M_no;
+
+
+            bool result = await DisplayAlert("削除", "この記録を削除しますか", "OK", "キャンセル");
+
+            if (result == true)
+            {
+                int no = m;
+
+                int M_no = no;
+
+                RecordModelv2.DeleteRecords(M_no);
+
+                m_name.Text = x;
+
+                InitializeComponent();
+
+            }
+        }
     }
 }
