@@ -40,8 +40,8 @@ namespace MuscleTrainingRecords00
 
         private void addItemButton_Clicked(object sender, EventArgs e)
         {
-            //ReModel.name = t;
-            if (RecordsModel.SelectName(t).Equals(t) && RecordsModel.SelectName(t) != null)
+            string m = RecordsModel.SelectName(t).ToString();
+            if (m.Equals(t))
             {
                 //RecordsModel.UpdateRe(t, date);
                 Navigation.PushAsync(new RecordListPage());
@@ -53,10 +53,5 @@ namespace MuscleTrainingRecords00
             }
 
         }
-
-        /*public MenudetaliPage(String l)
-        {
-        this.l = l;
-        }*/
     }
 }
