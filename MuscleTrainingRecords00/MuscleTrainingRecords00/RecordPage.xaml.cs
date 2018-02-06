@@ -61,47 +61,46 @@ namespace MuscleTrainingRecords00
 
 
     }
-        
-       /* protected override void OnAppearing()
+
+    /* protected override void OnAppearing()
+     {
+         DisplayAlert("id", ReModelv2.key+" " + ReModelv2.name +" "+ReModelv2.date, "OK");
+
+     }*/
+
+
+    //引っ張ったとき（更新）
+    private async void OnRefreshing(object sender, EventArgs e)
+    {
+        // 1秒処理を待つ
+        await Task.Delay(1000);
+
+        //リフレッシュを止める
+        list.IsRefreshing = false;
+
+        InitializeComponent();
+
+        m_name.Text = x;
+
+    }
+
+    private void addItemButton_Clicked(object sender, EventArgs e)
+    {
+
+        if (Weight.Text == null || Reps.Text == null || Set.Text == null)
         {
-            DisplayAlert("id", ReModelv2.key+" " + ReModelv2.name +" "+ReModelv2.date, "OK");
-
-        }*/
-
-
-        //引っ張ったとき（更新）
-        private async void OnRefreshing(object sender, EventArgs e)
-        {
-            // 1秒処理を待つ
-            await Task.Delay(1000);
-
-            //リフレッシュを止める
-            list.IsRefreshing = false;
-
-            InitializeComponent();
-
-            m_name.Text = x;
-
+            DisplayAlert("", "入力が不足しています", "OK");
         }
 
-        private void addItemButton_Clicked(object sender, EventArgs e)
-        {
-
-            if(Weight.Text == null || Reps.Text == null || Set.Text == null)
-            {
-                DisplayAlert("", "入力が不足しています", "OK");
-            }
-
-            int WeightText = int.Parse(Weight.Text);
-            int RepsText = int.Parse(Reps.Text);
-            int SetText = int.Parse(Set.Text);
+        int WeightText = int.Parse(Weight.Text);
+        int RepsText = int.Parse(Reps.Text);
+        int SetText = int.Parse(Set.Text);
 
 
-            DateTime now = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
-            string date = now.ToString("yyyy/MM/dd");
+        DateTime now = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+        string date = now.ToString("yyyy/MM/dd");
 
-            RecordModelv2.InsertRe(t,x,WeightText,RepsText,SetText,date);
-            //RecordModelv2.InsertRe(0, "データ", 0, 0, 0, now);
-        }
+        RecordModelv2.InsertRe(t, x, WeightText, RepsText, SetText, date);
+        //RecordModelv2.InsertRe(0, "データ", 0, 0, 0, now);
     }
 }
