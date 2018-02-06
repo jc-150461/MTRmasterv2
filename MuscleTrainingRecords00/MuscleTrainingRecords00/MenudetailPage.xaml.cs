@@ -40,8 +40,8 @@ namespace MuscleTrainingRecords00
 
         private void addItemButton_Clicked(object sender, EventArgs e)
         {
-            ReModel.name = t;
-            if (RecordsModel.SelectName(t).Equals(t))
+            //ReModel.name = t;
+            if (RecordsModel.SelectName(t) != null )
             {
                 //RecordsModel.UpdateRe(t, date);
                 Navigation.PushAsync(new RecordListPage());

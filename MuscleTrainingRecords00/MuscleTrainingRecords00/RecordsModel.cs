@@ -110,6 +110,7 @@ namespace MuscleTrainingRecords00
 
                     //データベースに指定したSQLを発行
                     return db.Query<RecordsModel>("SELECT [M_name] FROM [Records] WHERE [M_name] = '" + name + "'");
+                   
                     // ORDER BY[M_date]
                 }
                 catch (Exception e)
@@ -121,8 +122,9 @@ namespace MuscleTrainingRecords00
             }
         }
 
-        /********************デリートメソッド*************************************/
-        public static void DeleteRecords(int m_no)
+       
+            /********************デリートメソッド*************************************/
+            public static void DeleteRecords(int m_no)
         {
             //データベースに接続する
             using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
