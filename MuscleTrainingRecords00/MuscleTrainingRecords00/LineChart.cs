@@ -32,9 +32,9 @@ namespace MuscleTrainingRecords00
 
                 MarkerType = MarkerType.Circle,
 
-                MarkerStroke = OxyColors.Blue,
+                MarkerStroke = OxyColors.Red,
 
-                MarkerFill = OxyColors.SkyBlue,
+                MarkerFill = OxyColors.HotPink,
 
                 DataFieldX = DateTime.Now.ToString(),
                 // DataFieldX = "Date",
@@ -70,9 +70,9 @@ namespace MuscleTrainingRecords00
 
                 MarkerType = MarkerType.Circle,
 
-                MarkerStroke = OxyColors.GreenYellow,
+                MarkerStroke = OxyColors.LightGreen,
 
-                MarkerFill = OxyColors.SkyBlue,
+                MarkerFill = OxyColors.MediumBlue,
 
                 DataFieldX = DateTime.Now.ToString(),
 
@@ -101,14 +101,12 @@ namespace MuscleTrainingRecords00
                 Title = "体重(kg)　体脂肪率(%)",
                 IsZoomEnabled = false,
                 Position = AxisPosition.Left,
-                Maximum = 150,
-                Minimum = 50,
+                Maximum = 100,
+                Minimum = 10,
                 MajorStep = 10,
                 MajorGridlineStyle = LineStyle.Solid,
                 MinorGridlineStyle = LineStyle.Dot,
-                ExtraGridlines = new double[] { 1, 2, 3, 8, 9, 10 },
-                ExtraGridlineThickness = 3,
-                ExtraGridlineColor = OxyColors.SkyBlue,
+
 
 
 
@@ -139,8 +137,8 @@ namespace MuscleTrainingRecords00
 
 
 
-            var startDate = DateTime.Today;
-            var endDate = DateTime.Today.AddDays(+7);
+            var startDate = DateTime.Today.AddDays(-1);
+            var endDate = DateTime.Today.AddDays(+2);
 
             var minValue = DateTimeAxis.ToDouble(startDate);
             var maxValue = DateTimeAxis.ToDouble(endDate);

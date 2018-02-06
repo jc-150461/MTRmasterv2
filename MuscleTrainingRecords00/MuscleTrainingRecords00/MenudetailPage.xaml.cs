@@ -20,12 +20,15 @@ namespace MuscleTrainingRecords00
         {
             InitializeComponent();
 
+            Transition.Text = m.Trim(); //メニュー名
 
-            Transition.Text = m.Trim();
+            Load.Text = l; //負荷度
 
-            Description.Text = d;
 
-            //image.Source = new Uri(i);
+
+            Description.Text = d; //やり方
+
+            image.Source = ImageSource.FromStream(() => GetType().GetTypeInfo().Assembly.GetManifestResourceStream(i));
 
             t = m;
 

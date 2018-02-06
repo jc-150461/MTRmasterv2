@@ -19,7 +19,7 @@
                      WinPhone="0, 0, 0, 0" />
             </StackLayout.Margin>
 
-           
+
 
             <!--DBver-->
             <oxy:PlotView Model="{Binding Model}"
@@ -58,7 +58,7 @@
                        x:Name="today"
                        FormattedText = "yyyy/MM/dd"/>
 
-                
+
 
             </StackLayout>
 
@@ -71,10 +71,10 @@
                        FontSize="Medium"/>
 
                 <Entry x:Name="bWeight" Placeholder="体重を入力してください" 
-                       
+                       WidthRequest="200"
                        HorizontalOptions="Center"
                        VerticalOptions="Center"
-                       Margin="30"/>
+                       />
 
             </StackLayout>
 
@@ -90,7 +90,7 @@
                        
                        HorizontalOptions="Center"
                        VerticalOptions="Center"
-                       Margin="30"/>
+                       />
 
 
 
