@@ -74,6 +74,7 @@
                        WidthRequest="200"
                        HorizontalOptions="Center"
                        VerticalOptions="Center"
+                        Keyboard ="Numeric"
                        />
 
             </StackLayout>
@@ -90,6 +91,7 @@
                        
                        HorizontalOptions="Center"
                        VerticalOptions="Center"
+                       Keyboard ="Numeric"
                        />
 
 
