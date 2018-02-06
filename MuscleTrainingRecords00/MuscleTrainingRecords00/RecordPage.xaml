@@ -3,15 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MuscleTrainingRecords00.RecordPage"
               xmlns:local="clr-namespace:MuscleTrainingRecords00;assembly=MuscleTrainingRecords00">
-    
-    
-     <ContentPage.BindingContext>
+
+
+    <ContentPage.BindingContext>
         <local:ReModelv2 />
     </ContentPage.BindingContext>
-    
+
     <ContentPage.Content>
         <StackLayout Orientation="Vertical"
-                 Spacing="20">
+                 Spacing="50">
 
             <StackLayout.Margin>
 
@@ -25,14 +25,14 @@
             <BoxView BackgroundColor="Black"
                  HeightRequest="0.5"
                  WidthRequest="300"/>
-            
+
             <StackLayout Orientation="Vertical">
-                
+
                 <Label 
                      x:Name ="m_name"
-                     FontSize="Default"
+                     FontSize="35"
                     HorizontalOptions="Center"/>
-               
+
             </StackLayout>
 
             <BoxView BackgroundColor="Black"
@@ -45,7 +45,7 @@
                 <Label 
                Text="重量(kg)"
                     HorizontalOptions="StartAndExpand"
-               FontSize="Default"/>
+               FontSize="35"/>
 
                 <Entry HorizontalOptions="EndAndExpand"
                    WidthRequest="200"
@@ -53,13 +53,13 @@
                        Placeholder="Kg"
                    PlaceholderColor="White"
                    x:Name="Weight"/>
-                
+
                 <Label x:Name="KG"
                    Text="kg"
-                   FontSize="Default"/>
+                   FontSize="35"/>
             </StackLayout>
 
-            <BoxView BackgroundColor="AliceBlue"
+            <BoxView BackgroundColor="Black"
                  HeightRequest="0.5"
                  WidthRequest="300"/>
 
@@ -67,7 +67,7 @@
                 <Image Source="repeat.png" HorizontalOptions="Start"/>
                 <Label
                Text="Reps(回数)"
-               FontSize="Default"
+               FontSize="35"
                     HorizontalOptions="StartAndExpand"/>
 
                 <Entry 
@@ -79,16 +79,16 @@
 
             </StackLayout>
 
-            <BoxView BackgroundColor="AliceBlue"
+            <BoxView BackgroundColor="Black"
                  HeightRequest="0.5"
                  WidthRequest="300"/>
 
             <StackLayout Orientation="Horizontal">
                 <Image Source="numbered-list.png" HorizontalOptions="Start"/>
-                
+
                 <Label 
                Text="セット数"
-               FontSize="Default"
+               FontSize="35"
                     HorizontalOptions="StartAndExpand"/>
 
                 <Entry
@@ -102,26 +102,26 @@
             </StackLayout>
             <StackLayout Orientation="Vertical">
                 <Button   Text="保存" Clicked="addItemButton_Clicked" x:Name="addItemButton" BackgroundColor="RoyalBlue" TextColor="White" FontSize="Large" VerticalOptions="EndAndExpand" />
-                
-                <Grid Padding="0,10,0,10">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="2*" />
-                    <ColumnDefinition Width="1*" />
-                    <ColumnDefinition Width="1*" />
-                    <ColumnDefinition Width="1*" />
-                </Grid.ColumnDefinitions>
 
-                <Label Text="日付" 
+                <Grid Padding="0,10,0,10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Text="日付" 
                        BackgroundColor="Transparent"
                        Grid.Column="0" Grid.Row="0"/>
-                <Label Text="重量（kg）" 
+                    <Label Text="重量（kg）" 
                        BackgroundColor="Transparent"
                        Grid.Column="1" Grid.Row="0"
                        HorizontalOptions="Center"/>
-                <Label Text="Reps（回数）" 
+                    <Label Text="Reps（回数）" 
                        BackgroundColor="Transparent"
                        Grid.Column="2" Grid.Row="0"
                        HorizontalOptions="Center"/>
@@ -130,29 +130,29 @@
                        Grid.Column="3" Grid.Row="0"
                        HorizontalOptions="Center"/>
 
-            </Grid>
-                
-                 <ListView ItemsSource="{Binding Recordsv2}"
+                </Grid>
+
+                <ListView ItemsSource="{Binding Recordsv2}"
                       IsPullToRefreshEnabled="True"
                       Refreshing="OnRefreshing"
                       RowHeight="65"
                       x:Name="list"
                       HasUnevenRows="True">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Grid Padding="10,20,10,20">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="*" />
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="2*" />
-                                    <ColumnDefinition Width="1*" />
-                                    <ColumnDefinition Width="1*" />
-                                    <ColumnDefinition Width="1*" />
-                                </Grid.ColumnDefinitions>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="10,20,10,20">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="2*" />
+                                        <ColumnDefinition Width="1*" />
+                                        <ColumnDefinition Width="1*" />
+                                        <ColumnDefinition Width="1*" />
+                                    </Grid.ColumnDefinitions>
 
-                                <Label Text="{Binding M_date}" 
+                                    <Label Text="{Binding M_date}" 
                                    Grid.Column="0" Grid.Row="0"
                                    FontAttributes="Bold"/>
                                     <Label Text="{Binding M_weight}"
@@ -164,13 +164,13 @@
                                     <Label Text="{Binding M_set}" 
                                             Grid.Column="3" Grid.Row="0"
                                            FontAttributes="Bold"/>
-                            </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
 
-                
+
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

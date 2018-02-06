@@ -23,84 +23,48 @@ namespace MuscleTrainingRecords00
             x = l;
             t = m;
 
-            ToolbarItem tItem = new ToolbarItem
-            {
-                Icon = "ic_delete.png",
-                Text = "メニュー削除",
-                Priority = 1,
-                Order = ToolbarItemOrder.Primary,
-                Command = new Command(async () =>
-                {
-
-
-
-
-
-                    bool result = await DisplayAlert("削除", "この記録を削除しますか", "OK", "キャンセル");
-
-                    if (result == true)
-                    {
-                        int no = m;
-
-                        int M_no = no;
-
-                        RecordsModel.DeleteRecords(M_no);
-
-                        InitializeComponent();
-
-                        await Navigation.PushAsync(new RecordListPage());
-                    }
-                }),
-
-
-            };
-
-            this.ToolbarItems.Add(tItem);
 
         }
 
-
-    }
-
-    /* protected override void OnAppearing()
-     {
-         DisplayAlert("id", ReModelv2.key+" " + ReModelv2.name +" "+ReModelv2.date, "OK");
-
-     }*/
+        /* protected override void OnAppearing()
+         {
+             DisplayAlert("id", ReModelv2.key+" " + ReModelv2.name +" "+ReModelv2.date, "OK");
+         }*/
 
 
-    //引っ張ったとき（更新）
-    private async void OnRefreshing(object sender, EventArgs e)
-    {
-        // 1秒処理を待つ
-        await Task.Delay(1000);
-
-        //リフレッシュを止める
-        list.IsRefreshing = false;
-
-        InitializeComponent();
-
-        m_name.Text = x;
-
-    }
-
-    private void addItemButton_Clicked(object sender, EventArgs e)
-    {
-
-        if (Weight.Text == null || Reps.Text == null || Set.Text == null)
+        //引っ張ったとき（更新）
+        private async void OnRefreshing(object sender, EventArgs e)
         {
-            DisplayAlert("", "入力が不足しています", "OK");
+            // 1秒処理を待つ
+            await Task.Delay(1000);
+
+            //リフレッシュを止める
+            list.IsRefreshing = false;
+
+            InitializeComponent();
+
+            m_name.Text = x;
+
         }
 
-        int WeightText = int.Parse(Weight.Text);
-        int RepsText = int.Parse(Reps.Text);
-        int SetText = int.Parse(Set.Text);
+        private void addItemButton_Clicked(object sender, EventArgs e)
+        {
+
+            if (Weight.Text == null || Reps.Text == null || Set.Text == null)
+            {
+                DisplayAlert("", "入力が不足しています", "OK");
+            }
+
+            int WeightText = int.Parse(Weight.Text);
+            int RepsText = int.Parse(Reps.Text);
+            int SetText = int.Parse(Set.Text);
 
 
-        DateTime now = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
-        string date = now.ToString("yyyy/MM/dd");
+            DateTime now = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+            string date = now.ToString("yyyy/MM/dd");
 
-        RecordModelv2.InsertRe(t, x, WeightText, RepsText, SetText, date);
-        //RecordModelv2.InsertRe(0, "データ", 0, 0, 0, now);
+            RecordModelv2.InsertRe(t, x, WeightText, RepsText, SetText, date);
+            //RecordModelv2.InsertRe(0, "データ", 0, 0, 0, now);
+        }
     }
 }
