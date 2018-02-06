@@ -43,7 +43,7 @@ namespace MuscleTrainingRecords00
             ReModel.name = t;
             if (RecordsModel.SelectName(t) != null)
             {
-                RecordsModel.UpdateRe(t, date);
+                //RecordsModel.UpdateRe(t, date);
                 Navigation.PushAsync(new RecordListPage());
             }
             else
