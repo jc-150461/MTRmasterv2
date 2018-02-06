@@ -37,7 +37,7 @@ namespace MuscleTrainingRecords00
 
 
 
-                    bool result = await DisplayAlert("削除", "この記録を削除しますか", "OK", "キャンセル");
+                    bool result = await DisplayAlert("削除", "このメニューを削除しますか", "OK", "キャンセル");
 
                     if (result == true)
                     {
