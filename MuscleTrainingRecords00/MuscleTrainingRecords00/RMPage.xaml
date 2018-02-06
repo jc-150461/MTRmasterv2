@@ -44,7 +44,7 @@
                        FontSize="Default"
                        VerticalOptions="CenterAndExpand"
                        HorizontalOptions="CenterAndExpand"
-                            Keyboard ="Numeric"/>
+                           />
 
 
                     <Entry x:Name="Weight"
@@ -52,7 +52,7 @@
                        HorizontalOptions="EndAndExpand"
                        VerticalOptions="EndAndExpand"
                        WidthRequest="250"
-                            Keyboard ="Numeric"
+                           
                        />
                 </StackLayout>
             </StackLayout>
