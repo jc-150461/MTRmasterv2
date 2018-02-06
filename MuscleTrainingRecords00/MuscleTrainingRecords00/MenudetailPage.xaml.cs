@@ -14,21 +14,18 @@ namespace MuscleTrainingRecords00
         string t;
 
         //今日の日付
-        static  DateTime now = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+        static DateTime now = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
         string date = now.ToString("yyyy/MM/dd");
-        public MenudetaliPage(string m, string d, string i)//String m
+        public MenudetaliPage(string m, string d, string i ,string l)//String m
         {
             InitializeComponent();
 
-            Transition.Text = m.Trim(); //メニュー名
 
-            Load.Text = l; //負荷度
+            Transition.Text = m.Trim();
 
+            Description.Text = d;
 
-
-            Description.Text = d; //やり方
-
-            image.Source = ImageSource.FromStream(() => GetType().GetTypeInfo().Assembly.GetManifestResourceStream(i));
+            //image.Source = new Uri(i);
 
             t = m;
 
@@ -37,7 +34,7 @@ namespace MuscleTrainingRecords00
         private void addItemButton_Clicked(object sender, EventArgs e)
         {
             ReModel.name = t;
-            RecordsModel.InsertRe(1,t,0,0,0,date);
+            RecordsModel.InsertRe(1, t, 0, 0, 0, date);
 
             Navigation.PushAsync(new RecordListPage());
 
