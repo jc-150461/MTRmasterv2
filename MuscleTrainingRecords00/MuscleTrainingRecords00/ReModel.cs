@@ -18,10 +18,10 @@ namespace MuscleTrainingRecords00
         
         public ReModel()
         {
-            if(RecordsModel.SelectRecords().Equals(name))
+           /* if(RecordsModel.SelectRecords().Equals(name))
             {
                 RecordsModel.UpdateRe(date);
-            }
+            }*/
 
             if (RecordsModel.SelectRecords() != null)
             {
