@@ -22,7 +22,7 @@
                      WinPhone="0, 0, 0, 0" />
             </StackLayout.Margin>
 
-            <BoxView BackgroundColor="Black"
+            <BoxView BackgroundColor="AliceBlue"
                  HeightRequest="0.5"
                  WidthRequest="300"/>
 
@@ -30,7 +30,7 @@
 
                 <Label 
                      x:Name ="m_name"
-                     FontSize="35"
+                     FontSize="Default"
                     HorizontalOptions="Center"/>
 
             </StackLayout>
@@ -45,7 +45,7 @@
                 <Label 
                Text="重量(kg)"
                     HorizontalOptions="StartAndExpand"
-               FontSize="35"/>
+               FontSize="Default"/>
 
                 <Entry HorizontalOptions="EndAndExpand"
                    WidthRequest="200"
@@ -56,10 +56,10 @@
 
                 <Label x:Name="KG"
                    Text="kg"
-                   FontSize="35"/>
+                   FontSize="Default"/>
             </StackLayout>
 
-            <BoxView BackgroundColor="Black"
+            <BoxView BackgroundColor="AliceBlue"
                  HeightRequest="0.5"
                  WidthRequest="300"/>
 
@@ -67,7 +67,7 @@
                 <Image Source="repeat.png" HorizontalOptions="Start"/>
                 <Label
                Text="Reps(回数)"
-               FontSize="35"
+               FontSize="Default"
                     HorizontalOptions="StartAndExpand"/>
 
                 <Entry 
@@ -79,7 +79,7 @@
 
             </StackLayout>
 
-            <BoxView BackgroundColor="Black"
+            <BoxView BackgroundColor="AliceBlue"
                  HeightRequest="0.5"
                  WidthRequest="300"/>
 
@@ -88,7 +88,7 @@
 
                 <Label 
                Text="セット数"
-               FontSize="35"
+               FontSize="Default"
                     HorizontalOptions="StartAndExpand"/>
 
                 <Entry
