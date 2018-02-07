@@ -5,7 +5,6 @@ namespace MuscleTrainingRecords00
 {
     class ReModel
     {
-        public static string name;
         static DateTime now = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
         string date = now.ToString("yyyy/MM/dd");
 

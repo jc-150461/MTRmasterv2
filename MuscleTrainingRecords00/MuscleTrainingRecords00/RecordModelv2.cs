@@ -127,44 +127,14 @@ namespace MuscleTrainingRecords00
             }
         }
 
-        /********************オールデリートメソッド*************************************/
-        public static void DeleteAllRecordsd()
-        {
-            //データベースに接続する
-            using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
-            {
-                try
-                {
-                    //データベースにテーブルを作成する
-                    db.CreateTable<RecordModelv2>();
-
-                    db.DeleteAll<RecordModelv2>();//デリートで渡す値は主キーじゃないといけない説
-                    db.Commit();
-                }
-                catch (Exception e)
-                {
-                    db.Rollback();
-                    System.Diagnostics.Debug.WriteLine(e);
-                }
-            }
-        }
-
         /********************アップデートメソッド RecordPage**************************************/
         public static void UpdateRecord(int m_no, int m_weight, int m_leg, int m_set, string m_date)
         {
             using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
             {
-                /*int no=  m_no;
-                int weight = m_weight;
-                int leg = m_leg;
-                int set = m_set;
-                TimeSpan span = m_date;
-                int date = span.Days;*/
 
                 try
                 {
-                    //データベースに指定したSQLを発行
-                    //return db.Query<RecordsModel>("UPDATE [Records] SET [M_weight] = "+ weight +", [M_leg] = "+ leg +",[M_set] = "+ set + "WHERE [M_no] = "+ no);
                     db.CreateTable<RecordModelv2>();
 
                     db.Update(new RecordModelv2() { M_no = m_no, M_weight = m_weight, M_leg = m_leg, M_set = m_set, M_date = m_date });
