@@ -38,8 +38,8 @@ namespace MuscleTrainingRecords00
             try
             {
                 var db = TodoItemDatabase.getDatabase();
-                int B_Weight = int.Parse(bWeight.Text);
-                int B_Fat = int.Parse(bFat.Text);
+                double B_Weight = int.Parse(bWeight.Text);
+                double B_Fat = int.Parse(bFat.Text);
                 DateTime dCreated = DateTime.Today;
 
 
