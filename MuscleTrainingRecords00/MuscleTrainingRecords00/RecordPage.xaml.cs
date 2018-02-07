@@ -109,7 +109,6 @@ namespace MuscleTrainingRecords00
 
                 InitializeComponent();
 
-
             }  
         }
 
