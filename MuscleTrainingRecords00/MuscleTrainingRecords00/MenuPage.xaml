@@ -22,64 +22,38 @@
             <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="30">
 
 
-                <Button x:Name="全部"
-                        Text="全部"
-                        
+                <Button Text="全部"
                         Clicked="全部_Clicked"/>
 
-                <Button x:Name="腹"
-                        Text="腹"
-                        
+                <Button Text="腹"                       
                         Clicked="腹_Clicked"/>
 
-
-                <Button x:Name="腕"
-                        Text="腕"
-                       
+                <Button Text="腕"                     
                         Clicked="腕_Clicked"/>
 
-
-                <Button x:Name="背中"
-                        Text="背中"
-                       
+                <Button  Text="背中"
                         Clicked="背中_Clicked"/>
 
-
-                <Button x:Name="胸肩"
-                        Text="胸肩"
-                       
+                <Button Text="胸肩"
                         Clicked="胸肩_Clicked"/>
 
-                <Button x:Name="脚"
-                        Text="脚"
-                        
+                <Button Text="脚"                     
                         Clicked="脚_Clicked"/>
 
 
             </StackLayout>
 
 
-            <BoxView 
-                BackgroundColor="Black"
-                HeightRequest="0.5"
-                />
+            <BoxView BackgroundColor="Black"
+                     HeightRequest="0.5" />
 
             <StackLayout Orientation="Vertical">
 
                 <ListView x:Name="listView"
-                      
-                      ItemTapped="listView_ItemTapped"
-                     
+                      ItemTapped="listView_ItemTapped"         
                       SeparatorColor="HotPink"/>
 
             </StackLayout>
-
-
-
-
-
-
-
 
         </StackLayout>
 

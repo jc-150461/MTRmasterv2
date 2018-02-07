@@ -80,24 +80,36 @@ namespace MuscleTrainingRecords00
 
         }
 
-        private void addItemButton_Clicked(object sender, EventArgs e)
+        private async Task addItemButton_Clicked(object sender, EventArgs e)
         {
-
-            if (Weight.Text == null || Reps.Text == null || Set.Text == null)
+            try
             {
-                DisplayAlert("", "入力が不足しています", "OK");
+                if (Weight.Text == null || Reps.Text == null || Set.Text == null)
+                {
+                    DisplayAlert("", "入力が不足しています", "OK");
+                }
+            }catch(Exception)
+            {
+                DisplayAlert("", "入力してください。", "OK");
             }
 
             int WeightText = int.Parse(Weight.Text);
             int RepsText = int.Parse(Reps.Text);
             int SetText = int.Parse(Set.Text);
 
+            bool result = await DisplayAlert("保存", WeightText+"kg "+ RepsText+"回数 "+SetText
+                     +"セット を保存しますか", "OK", "キャンセル");
 
-            DateTime now = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
-            string date = now.ToString("yyyy/MM/dd");
+            if (result == true)
+            {
+                DateTime now = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+                string date = now.ToString("yyyy/MM/dd");
 
-            RecordModelv2.InsertRe(t, x, WeightText, RepsText, SetText, date);
-            //RecordModelv2.InsertRe(0, "データ", 0, 0, 0, now);
+                RecordModelv2.InsertRe(t, x, WeightText, RepsText, SetText, date);
+
+                InitializeComponent();
+
+            }  
         }
 
         private async Task list_ItemTapped(object sender, ItemTappedEventArgs e)
