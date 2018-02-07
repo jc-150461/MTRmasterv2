@@ -19,7 +19,7 @@ namespace MuscleTrainingRecords00
 
         public string M_name { get; set; } //筋トレ名前
 
-        public int M_weight { get; set; } //重量
+        public double M_weight { get; set; } //重量
 
         public int M_leg { get; set; } //回数
 
@@ -32,7 +32,7 @@ namespace MuscleTrainingRecords00
 
 
         /********************インサートメソッド RecordPage　追加**********************/
-        public static void InsertRe(int m_no, string m_name, int m_weight, int m_leg, int m_set, string m_date)
+        public static void InsertRe(int m_no, string m_name, double m_weight, int m_leg, int m_set, string m_date)
         {
             //データベースに接続する
             using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
@@ -128,7 +128,7 @@ namespace MuscleTrainingRecords00
         }
 
         /********************アップデートメソッド RecordPage**************************************/
-        public static void UpdateRecord(int m_no, int m_weight, int m_leg, int m_set, string m_date)
+        public static void UpdateRecord(int m_no, double m_weight, int m_leg, int m_set, string m_date)
         {
             using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
             {

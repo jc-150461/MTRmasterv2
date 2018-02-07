@@ -21,16 +21,11 @@ namespace MuscleTrainingRecords00
         {
             InitializeComponent();
 
-
             Transition.Text = m.Trim(); //メニュー名
 
             Load.Text = l; //負荷度
 
-
-
             Description.Text = d; //やり方
-
-
 
             image.Source = ImageSource.FromStream(() => GetType().GetTypeInfo().Assembly.GetManifestResourceStream(i));
 
@@ -40,7 +35,7 @@ namespace MuscleTrainingRecords00
 
         private void addItemButton_Clicked(object sender, EventArgs e)
         {
-                RecordsModel.InsertRe(1, t, 0, 0, 0, date);
+                RecordsModel.InsertRe(1, t, 0.0, 0, 0, date);
                 Navigation.PushAsync(new RecordListPage());
 
         }

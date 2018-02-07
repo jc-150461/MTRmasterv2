@@ -33,19 +33,12 @@ namespace MuscleTrainingRecords00
                 Command = new Command(async () =>
                 {
 
-
-
-
-
                     bool result = await DisplayAlert("削除", "このメニューを削除しますか", "OK", "キャンセル");
 
                     if (result == true)
                     {
-                        int no = m;
 
-                        int M_no = no;
-
-                        RecordsModel.DeleteRecords(M_no);
+                        RecordsModel.DeleteRecords(m);
 
                         InitializeComponent();
 
@@ -58,12 +51,6 @@ namespace MuscleTrainingRecords00
             this.ToolbarItems.Add(tItem);
 
         }
-
-        /* protected override void OnAppearing()
-         {
-             DisplayAlert("id", ReModelv2.key+" " + ReModelv2.name +" "+ReModelv2.date, "OK");
-         }*/
-
 
         //引っ張ったとき（更新）
         private async void OnRefreshing(object sender, EventArgs e)
@@ -84,21 +71,13 @@ namespace MuscleTrainingRecords00
         {
             try
             {
-                if (Weight.Text == null || Reps.Text == null || Set.Text == null)
-                {
-                    DisplayAlert("", "入力が不足しています", "OK");
-                }
-            }catch(Exception)
-            {
-                DisplayAlert("", "入力してください。", "OK");
-            }
 
-            int WeightText = int.Parse(Weight.Text);
+            double WeightText = Double.Parse(Weight.Text);
             int RepsText = int.Parse(Reps.Text);
             int SetText = int.Parse(Set.Text);
 
-            bool result = await DisplayAlert("保存", WeightText+"kg "+ RepsText+"回数 "+SetText
-                     +"セット を保存しますか", "OK", "キャンセル");
+            bool result = await DisplayAlert("保存", WeightText+"kg　"+ RepsText+"回数　"+SetText
+                     +"セット　を保存しますか", "OK", "キャンセル");
 
             if (result == true)
             {
@@ -109,7 +88,13 @@ namespace MuscleTrainingRecords00
 
                 InitializeComponent();
 
-            }  
+                    m_name.Text = x;
+
+                }
+            } catch (Exception)
+            {
+               await DisplayAlert("", "入力してください。", "OK");
+            }
         }
 
         private async Task list_ItemTapped(object sender, ItemTappedEventArgs e)
@@ -117,16 +102,12 @@ namespace MuscleTrainingRecords00
             Recordv2 n = (Recordv2)(list.SelectedItem);
             int m = n.M_no;
 
-
             bool result = await DisplayAlert("削除", "この記録を削除しますか", "OK", "キャンセル");
 
             if (result == true)
             {
-                int no = m;
 
-                int M_no = no;
-
-                RecordModelv2.DeleteRecords(M_no);
+                RecordModelv2.DeleteRecords(m);
 
                 InitializeComponent();
 

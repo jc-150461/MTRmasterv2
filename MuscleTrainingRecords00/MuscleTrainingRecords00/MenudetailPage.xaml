@@ -15,13 +15,11 @@
                      WinPhone="0, 0, 0, 0" />
             </StackLayout.Margin>
 
-
             <StackLayout Orientation="Vertical"  >
                 <Label Text=""
                    x:Name="Transition"
                    VerticalOptions="CenterAndExpand"
-                   HorizontalOptions="CenterAndExpand"
-                  
+                   HorizontalOptions="CenterAndExpand"                
                    FontSize="Large"
                    FontAttributes="Bold"/>
 
@@ -35,9 +33,6 @@
 
             <StackLayout Orientation="Vertical">
 
-
-
-
                 <Image x:Name="image"
                        VerticalOptions="StartAndExpand"
                        HorizontalOptions="StartAndExpand"
@@ -45,13 +40,10 @@
                        HeightRequest="300"
                        Aspect="Fill"/>
 
-
                 <Label Text="やり方"
-                       
                        FontSize="Large"
                        FontAttributes="Bold"
-                       HorizontalOptions="Start"
-                       />
+                       HorizontalOptions="Start"/>
 
                 <Label Text=""
                    x:Name="Description"
@@ -62,9 +54,13 @@
 
             </StackLayout>
 
-
-            <Button  Clicked="addItemButton_Clicked" Text="記録へ追加" x:Name="addItemButton" BackgroundColor="RoyalBlue" TextColor="White" FontSize="Default" VerticalOptions="EndAndExpand" />
-
+            <Button  Clicked="addItemButton_Clicked" 
+                     Text="記録へ追加"
+                     x:Name="addItemButton" 
+                     BackgroundColor="RoyalBlue" 
+                     TextColor="White" 
+                     FontSize="Default" 
+                     VerticalOptions="EndAndExpand" />
 
         </StackLayout>
     </ContentPage.Content>

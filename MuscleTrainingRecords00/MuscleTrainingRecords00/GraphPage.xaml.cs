@@ -38,12 +38,9 @@ namespace MuscleTrainingRecords00
             try
             {
                 var db = TodoItemDatabase.getDatabase();
-                //String sName = eName.Text;
-                //String sNotes = eNotes.Text;
-                //Boolean bDone = eDone.IsToggled;
                 int B_Weight = int.Parse(bWeight.Text);
                 int B_Fat = int.Parse(bFat.Text);
-                DateTime dCreated = DateTime.Today.AddDays(+2);
+                DateTime dCreated = DateTime.Today;
 
 
                 TodoItem sameDateItem = await db.GetItemByCreatedAsync(dCreated);
