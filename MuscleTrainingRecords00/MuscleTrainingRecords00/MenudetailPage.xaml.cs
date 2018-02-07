@@ -35,8 +35,18 @@ namespace MuscleTrainingRecords00
 
         private void addItemButton_Clicked(object sender, EventArgs e)
         {
+            List<RecordsModel> list = RecordsModel.SelectName(t);
+            if ((list != null) && (list.Count != 0))
+            {
+                DisplayAlert("", "そのメニューはもう既に存在しています", "OK");
+                //RecordsModel.UpdateRe(t, date);
+                Navigation.PushAsync(new RecordListPage());
+            }
+            else
+            {
                 RecordsModel.InsertRe(1, t, 0.0, 0, 0, date);
                 Navigation.PushAsync(new RecordListPage());
+            }
 
         }
     }
