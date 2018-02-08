@@ -116,25 +116,7 @@ namespace MuscleTrainingRecords00
             };
             Model.Axes.Add(axisY);
 
-            /*
-            var axisX = new LinearAxis() //Y軸　線
-            {
-                Title = "体脂肪率(%)",
-                IsZoomEnabled = false,
-                Position = AxisPosition.Left,
-                Maximum = 40,
-                Minimum = 20,
-                MajorStep = 1,
-                MajorGridlineStyle = LineStyle.Solid,
-                MinorGridlineStyle = LineStyle.Dot,
-                ExtraGridlines = new double[] { 1, 2, 3, 8, 9, 10 },
-                ExtraGridlineThickness = 3,
-                ExtraGridlineColor = OxyColors.SkyBlue,
-            };
-            Model.Axes.Add(axisX);
-            */
-
-
+           
 
 
             var startDate = DateTime.Today.AddDays(-1);
